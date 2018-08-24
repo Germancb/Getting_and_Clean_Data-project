@@ -12,13 +12,16 @@
 #
 # Extract  mesures: Mean and estándar deviation names goals: features_Ind (Indices) features_names
 > features_Ind1 <- grep("*-mean().", features2)
+#
 > features_Ind2 <- grep("*-std()", features2)
+#
 > features_Ind3 <- c(features_Ind1, features_Ind2)
+#
 > features_Ind <- sort(features_Ind3)   
 > features_names <- features[features_Ind,2]
 
-# Read train  and merge train data. goal: X_train
-> X_train <- read.table("UCI HAR Dataset/train/X_train.txt")[features_Ind]
+# Read train  and merge train data. goal: X_train> X_train <- read.table("UCI HAR Dataset/train/X_train.txt")[features_Ind]
+
 > Y_train <- read.table("UCI HAR Dataset/train/y_train.txt")
 > S_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
 > X_train <- cbind(X_train, Y_train, S_Train)
