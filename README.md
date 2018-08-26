@@ -36,7 +36,7 @@
 > X_totdata <- rbind(X_train, X_test)
 #
 # Assign labels to dataset X_totdata
-> colnames(X_totdata) <- c("subject", "activity", features_names)
+> colnames(X_totdata) <- c("subject", "activity", as.character(features_names))
 #
 # Convert activities and subjects in factors
 #
@@ -48,4 +48,4 @@
 # Cast reshaped data into data frame. It contains the average of each variable for each activity and subject X_totdata.mean
 > X_totdata.mean <- dcast(X_totdata.res, subject + activity ~ variable, mean)
 # Write data set as a txt file
-> write.table(X_totdata.mean, file = "TidyDatapgcd.txt", row.names=FALSE, quote = FALSE)
+> write.table(X_totdata.mean, file = "TidyDataSet2.txt", row.names=FALSE, quote = FALSE)
